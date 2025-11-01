@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:team_flag/flags/no_flag/no_flag_painter.dart';
 import 'package:team_flag/flags/france/france_flag_painter.dart';
+import 'package:team_flag/flags/brazil/brazil_flag_painter.dart';
 
 enum TeamFlagType {
   // Europa
@@ -205,6 +206,8 @@ enum TeamFlagType {
 
   static CustomPainter getPainter(TeamFlagType type) {
     switch (type) {
+      case TeamFlagType.brazil:
+        return BrazilFlagPainter();
       case TeamFlagType.france:
         return FranceFlagPainter();
       default:
