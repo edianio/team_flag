@@ -233,7 +233,10 @@ class TeamFlag extends StatelessWidget {
       width: width,
       height: _calculateHeight(width),
       decoration: isRounded ? BoxDecoration(shape: BoxShape.circle) : null,
-      child: CustomPaint(painter: TeamFlagType.getPainter(type)),
+      child: FittedBox(
+        fit: BoxFit.cover,
+        child: CustomPaint(size: Size(width, _calculateHeight(width)), painter: TeamFlagType.getPainter(type)),
+      ),
     );
   }
 }
