@@ -219,27 +219,15 @@ enum TeamFlagType {
 class TeamFlag extends StatelessWidget {
   final TeamFlagType type;
   final double width;
-  final bool isRounded;
 
-  const TeamFlag({super.key, required this.type, required this.width, this.isRounded = false});
+  const TeamFlag({super.key, required this.type, required this.width});
 
   double _calculateHeight(double width) {
-    if (isRounded) {
-      return width;
-    }
     return (width / 3) * 2;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: _calculateHeight(width),
-      decoration: isRounded ? BoxDecoration(shape: BoxShape.circle) : null,
-      child: FittedBox(
-        fit: BoxFit.cover,
-        child: CustomPaint(size: Size(width, _calculateHeight(width)), painter: TeamFlagType.getPainter(type)),
-      ),
-    );
+    return CustomPaint(size: Size(width, _calculateHeight(width)), painter: TeamFlagType.getPainter(type));
   }
 }

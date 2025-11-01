@@ -20,8 +20,8 @@ class FranceFlagPainter extends CustomPainter {
     final divisionWidth = size.width / 3;
 
     final blueRect = Rect.fromLTWH(0, 0, divisionWidth, size.height);
-    final whiteRect = Rect.fromLTWH(divisionWidth, 0, divisionWidth * 2, size.height);
-    final redRect = Rect.fromLTWH(divisionWidth * 2, 0, size.width, size.height);
+    final whiteRect = Rect.fromLTWH(divisionWidth, 0, divisionWidth, size.height);
+    final redRect = Rect.fromLTWH(divisionWidth * 2, 0, divisionWidth, size.height);
 
     canvas.drawRect(whiteRect, whitePaint);
     canvas.drawRect(blueRect, bluePaint);
